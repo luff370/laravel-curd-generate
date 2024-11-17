@@ -39,7 +39,7 @@ DummyTidyList
      * @return array
      * @throws \App\Exceptions\AdminException
      */
-    public function createForm()
+    public function createForm(): array
     {
         return create_form('添加', $this->createUpdateForm(), url('DummyUrl'));
     }
