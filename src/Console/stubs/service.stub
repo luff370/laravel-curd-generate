@@ -1,0 +1,76 @@
+<?php
+
+namespace DummyServiceNamespace;
+
+use DummyDaoNamespace\DummyDao;
+use App\Services\Service;
+use App\Exceptions\AdminException;
+use App\Support\Services\FormOptions;
+use App\Support\Services\FormBuilder as Form;
+
+/**
+ * Class DummyService
+ */
+class DummyService extends Service
+{
+    /**
+     * DummyService constructor.
+     */
+    public function __construct(DummyDao $dao)
+    {
+        $this->dao = $dao;
+    }
+
+    /**
+     * 列表数据处理
+     */
+    public function tidyListData($list)
+    {
+        foreach ($list as &$item) {
+DummyTidyList
+        }
+
+        return $list;
+    }
+
+    /**
+     * 新增表单获取
+     *
+     * @return array
+     * @throws \App\Exceptions\AdminException
+     */
+    public function createForm()
+    {
+        return create_form('添加', $this->createUpdateForm(), url('DummyUrl'));
+    }
+
+
+    /**
+     * 编辑表单获取
+     *
+     * @param int $id
+     *
+     * @return array
+     * @throws \App\Exceptions\AdminException
+     */
+    public function updateForm(int $id): array
+    {
+        $info = $this->dao->get($id);
+        if (!$info) {
+            throw new AdminException(400594);
+        }
+
+        return create_form('修改', $this->createUpdateForm($info->toArray()), url('DummyUrl/' . $id), 'PUT');
+    }
+
+    /**
+     * 生成form表单
+     */
+    public function createUpdateForm(array $info = []): array
+    {
+DummyForm
+
+        return $f;
+    }
+
+}

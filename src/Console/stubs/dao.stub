@@ -1,0 +1,20 @@
+<?php
+
+namespace DummyDaoNamespace;
+
+use App\Dao\BaseDao;
+use DummyModelNamespace\DummyModel;
+
+class DummyDao extends BaseDao
+{
+    /**
+     * 设置模型
+     *
+     * @return string
+     */
+    protected function setModel(): string
+    {
+        return DummyModel::class;
+    }
+
+}
