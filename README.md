@@ -6,7 +6,7 @@
 
 #### 开发安装
 ```shell
-$ composer config repositories.laravel-curd-builder vcs https://github.com/peterPan/laravel-curd-builder.git
+$ composer config repositories.laravel-curd-builder vcs https://github.com/luff370/laravel-curd-generate.git
 $ composer require peter/laravel-curd-builder:dev-main
 ```
 
@@ -20,7 +20,7 @@ $ composer require peter/laravel-curd-builder:dev-main
 #### 线上环境安装
 
 ```shell
-$ composer config repositories.laravel-curd-builder vcs https://github.com/peterPan/laravel-curd-builder.git
+$ composer config repositories.laravel-curd-builder vcs https://github.com/luff370/laravel-curd-builder.git
 $ composer require peter/laravel-curd-builder:~1.0
 ```
 
